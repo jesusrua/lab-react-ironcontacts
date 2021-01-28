@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.sass';
+import './App.css';
 import contacts from './contacts.json'
 
 class App extends React.Component {
@@ -54,11 +54,11 @@ class App extends React.Component {
   render() {
       return (
         <div className="App">
-          <h1>IronContacts</h1>
+          <h1 className="title">IronContacts</h1>
 
-          <button onClick={this.addRandomContact}>Add Random Contact</button>
-          <button onClick={this.sortByName}>Sort by name</button>
-          <button onClick={this.sortByPopularity}>Sort by popularity</button>
+          <button className="button" onClick={this.addRandomContact}>Add Random Contact</button>
+          <button className="button" onClick={this.sortByName}>Sort by name</button>
+          <button className="button" onClick={this.sortByPopularity}>Sort by popularity</button>
 
           <table>
           <thead>
@@ -75,7 +75,7 @@ class App extends React.Component {
                 <td><img src={contact.pictureUrl} alt={contact.name}></img></td>
                 <td>{contact.name}</td>
                 <td>{contact.popularity.toFixed(2)}</td>
-                <td><button className="button" onClick={()=>this.deleteContact(index)}>Delete</button></td>
+                <td><button className="button-delete" onClick={()=>this.deleteContact(index)}>Delete</button></td>
               </tr>   
               ))}
             </tbody>
